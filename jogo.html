@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br" class="h-100">
+
+<head>
+    <title>Jogando Genius</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jogo.css">
+
+</head>
+
+
+<body class="h-100">
+    <main class="container-fluid border border-dark h-100">
+        <div class="row h-50">
+            <button type="button" id="primary" class="bg-primary w-50 h-100 opacidade-0" disabled onclick="jogarCor(this);"></button>
+            <button type="button" id="danger" class="bg-danger w-50 h-100 opacidade-0" disabled onclick="jogarCor(this);"></button>
+        </div>
+        <div class="row h-50">
+            <button type="button" id="warning" class="bg-warning w-50 h-100 opacidade-0" disabled onclick="jogarCor(this);"></button>
+            <button type="button" id="success" class="bg-success w-50 h-100 opacidade-0" disabled onclick="jogarCor(this);"></button>
+        </div>
+        <button id="msg" class="position-absolute btn btn-dark text-white p-3" style="top: 48%; left: 46%; "
+            onclick="iniciarJogo();">Começar!</button>
+    </main>
+    <script src="js/jogo.js"></script>
+</body>
+
+</html>
