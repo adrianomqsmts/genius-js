@@ -59,7 +59,7 @@ function jogarCor(botao) {
             }
         } else {
             var valor = rodadaFixa - 1;
-            if (localStorage.key(0) == "recorde") {
+            if (localStorage.getItem("recorde") != undefined && localStorage.getItem("recorde") != null) {
                 if (localStorage.getItem("recorde") < valor) {
                     window.location.href = "resultado.html?resultado=recorde&rodada=" + (valor);
                     localStorage.setItem("recorde", valor);

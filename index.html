@@ -32,7 +32,7 @@
   </div>
 
   <script>
-    if (localStorage.key(0) == "recorde") {
+     if (localStorage.getItem("recorde") != undefined && localStorage.getItem("recorde") != null) {
       document.getElementById("recorde").innerHTML = "O seu recorde atual é até a rodada  " + localStorage.getItem("recorde");
     }
   </script>
