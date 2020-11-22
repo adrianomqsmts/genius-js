@@ -1,20 +1,55 @@
 <!doctype html>
-<html lang="pt-br">
-  <head>
-    <title>Resulado</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="pt-br" class="h-100">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+<head>
+  <title>Resulado</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <style>
+    body {
+      position: absolute;
+      background-image: url(imagens/festa.jpg);
+      background-repeat: no-repeat;
+      width: 100%;
+      background-size: 100%;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body class="h-100 d-flex align-content-center flex-wrap justify-content-center">
+
+  <div class="d-flex flex-column shadow m-auto p-auto h-auto w-auto">
+    <div id="resultado" class="text-center text-danger bg-white" style="opacity: 0.5;">
+    </div>
+    <div class="d-flex flex-fill">
+      <a href="jogo.html" class="flex-fill bg-success p-2 text-center text-white">Jogar novamente</a>
+      <a href="index.html" class="flex-fill bg-primary p-2 text-center text-white">Voltar ao início</a>
+    </div>
+  </div>
+
+
+
+  <script>
+    var url_atual = window.location.href;
+    var url = url_atual.split("&");
+    var rodada = url[1].split("=");
+    var rodada = rodada[1];
+    var recorde = url[0].split("=");
+    var recorde = recorde[1];
+    if (recorde == "recorde") {
+      document.getElementById("resultado").innerHTML = "<p class=\"display-4\">NOVO RECORDE!!!<br> PARABÉNS!!! Você chegou até a rodada " + rodada + '</p><small><span>Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/s/photos/party?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></small>';
+    } else {
+      document.getElementById("resultado").innerHTML = "<p class=\"display-4\">Ops! Errou. <br> Mas parabéns!!! Você chegou até a rodada " + rodada + '</p><small><span>Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/s/photos/party?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></small>';
+    }
+
+  </script>
+
+</body>
+
 </html>

@@ -1,20 +1,21 @@
-
 var cores = ["primary", "danger", "warning", "success"];
 var ordem = [escolherCor(), escolherCor(), escolherCor()];
-console.log(ordem);
-var qtdEscolhida = 2;
-var rodada = 2;
+var rodadaFixa = 2;
+var rodada = rodadaFixa;
+var qtdEscolhida = 0;
 var retorno;
-var retorno2;
 
 function iniciarJogo() {
-    document.getElementById("msg").innerHTML = "Espere!";
+    console.log(ordem);
+    var btn = document.getElementById("msg");
+    btn.innerHTML = "Memorize...";
+    btn.disabled = true;
     retorno = setInterval(exibirCor, 1000);
-    retorno2 = setTimeout(comecar, (1000 * rodada + 2000));
+    setTimeout(comecar, (1000 * rodada + 2000));
 }
 
 function exibirCor() {
-    var cor = ordem[rodada];    
+    var cor = ordem[rodadaFixa - rodada];
     var botao = document.getElementById(cor);
     console.log(cor + " " + botao)
     botao.className = "bg-" + cor + " w-50 h-100 opacidade-1";
@@ -34,19 +35,64 @@ function apagarCor(botao, cor) {
 function escolherCor() {
     return cores[Math.floor(Math.random() * 4)];
 }
+
 function comecar() {
     for (cor of cores) {
         botao = document.getElementById(cor);
         botao.disabled = false;
         botao.className = "bg-" + cor + " w-50 h-100 opacidade-1";
     }
-    document.getElementById("msg").innerHTML = "Acerte!";
+    var btn = document.getElementById("msg");
+    btn.innerHTML = "Sua vez!";
+    btn.disabled = true;
 }
 
-function jogarCor(botao){
-    console.log(botao.id)
-    if(ordem[qtdEscolhida--] != botao.id){
-        window.location.href = "resultado.html"
+function jogarCor(botao) {
+    if (qtdEscolhida <= rodadaFixa) {
+        if (ordem[qtdEscolhida] == botao.id) {
+            qtdEscolhida++;
+            if (qtdEscolhida > rodadaFixa) {
+                rodada = rodadaFixa + 1;
+                rodadaFixa++;
+                qtdEscolhida = 0;
+                fimRodada();
+            }
+        } else {
+            var valor = rodadaFixa - 1;
+            if (localStorage.key(0) == "recorde") {
+                if (localStorage.getItem("recorde") < valor) {
+                    window.location.href = "resultado.html?resultado=recorde&rodada=" + (valor);
+                    localStorage.setItem("recorde", valor);
+                } else {
+                    window.location.href = "resultado.html?resultado=derrota&rodada=" + (valor);
+                }
+            } else {
+                localStorage.setItem("recorde", valor);
+                window.location.href = "resultado.html?resultado=recorde&rodada=" + (valor);
+            }
+        }
+    }
+}
+
+function fimRodada() {
+    for (cor of cores) {
+        botao = document.getElementById(cor);
+        botao.disabled = true;
+        botao.className = "bg-" + cor + " w-50 h-100 opacidade-0";
+    }
+    var valor = rodadaFixa - 1;
+    ordem[rodadaFixa] = escolherCor();
+    var btn = document.getElementById("msg");
+    btn.innerHTML = "Jogar rordada " + valor;
+    btn.disabled = false;
+
+}
+
+function limpar() {
+    for (cor of cores) {
+        botao = document.getElementById(cor);
+        botao.disabled = true;
+        botao.className = "bg-" + cor + " w-50 h-100 opacidade-0";
     }
 }
 

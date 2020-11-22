@@ -1,18 +1,42 @@
 <!doctype html>
-<html lang="pt-br">
-  <head>
-    <title>Genius - Decorando</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="pt-br" class="h-100">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
-  </head>
-  <body class="bg-primary">
-    <main class="container border border-dark">
-        <a href="jogo.html" class="btn-outline-danger">JOGAR!</a>
+<head>
+  <title>Resulado</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </main>       
-   </body>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body class="h-100"
+  style="background-image: url(imagens/main.jpg); background-size: 100%; background-size: cover;background-repeat: no-repeat; height: 100%; width: 100%;">
+
+  <div class="jumbotron jumbotron-fluid h-100 bg-transparent">
+    <div class="container text-center">
+      <h1 class="display-3">GENIUS</h1>
+      <p class="lead bg-white">O jogo GENIUS estimular a memorização de cores e, o jogo original tinha aúdio e um
+        formato semelhante a um OVNI, possuía botões coloridos que emitiam sons harmônicos e se iluminavam em seqüência.
+        Cabia aos jogadores repetir o processo sem errar. E neste jogo online, deve-se acertar a sequência das cores e
+        bater o seu prórprio RECORDE! </p>
+      <p id="recorde" class="h1"></p>
+      <hr class="my-2">
+      <p>COMECE A JOGAR</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg p-3 w-25" href="jogo.html" role="button">JOGAR!</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    if (localStorage.key(0) == "recorde") {
+      document.getElementById("recorde").innerHTML = "O seu recorde atual é até a rodada  " + localStorage.getItem("recorde");
+    }
+  </script>
+
+</body>
+
 </html>
