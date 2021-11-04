@@ -2,7 +2,7 @@
 <html lang="pt-br" class="h-100">
 
 <head>
-  <title>Resulado</title>
+  <title>Resultado</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,14 +15,16 @@
 <body class="h-100"
   style="background-image: url(imagens/main.jpg); background-size: 100%; background-size: cover;background-repeat: no-repeat; height: 100%; width: 100%;">
 
-  <div class="jumbotron jumbotron-fluid h-100 bg-transparent">
-    <div class="container text-center">
+  <div class="jumbotron h-75 jumbotron-fluid bg-transparent">
+    <div class="container h-100 text-center">
       <h1 class="display-3">GENIUS</h1>
-      <p class="lead bg-white">O jogo GENIUS estimular a memorização de cores e, o jogo original tinha aúdio e um
-        formato semelhante a um OVNI, possuía botões coloridos que emitiam sons harmônicos e se iluminavam em seqüência.
+      <p class="lead bg-white h-75 text-justify container">O jogo GENIUS estimula a memorização através cores. O jogo original tinha áudio e um
+        formato semelhante a um OVNI, possuía botões coloridos que emitiam sons harmônicos e se iluminavam em sequência.
         Cabia aos jogadores repetir o processo sem errar. E neste jogo online, deve-se acertar a sequência das cores e
-        bater o seu prórprio RECORDE! </p>
+        bater o seu próprio RECORDE!</p>
       <p id="recorde" class="h1"></p>
+    </div>
+    <div class="container text-center">
       <hr class="my-2">
       <p>COMECE A JOGAR</p>
       <p class="lead">
@@ -32,7 +34,7 @@
   </div>
 
   <script>
-     if (localStorage.getItem("recorde") != undefined && localStorage.getItem("recorde") != null) {
+    if (localStorage.getItem("recorde") != undefined && localStorage.getItem("recorde") != null) {
       document.getElementById("recorde").innerHTML = "O seu recorde atual é até a rodada  " + localStorage.getItem("recorde");
     }
   </script>

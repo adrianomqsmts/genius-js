@@ -16,20 +16,20 @@
 
 <body class="h-100">
     <main class="container-fluid border border-dark h-100">
-        <div class="row h-50">
+        <div class="row h-50 bg-dark">
             <button type="button" id="primary" class="bg-primary w-50 h-100 opacidade-0" disabled
-                onclick="jogarCor(this);"></button>
+                onclick="jogarCor(this);" style="border-radius: 50% 0 0 0;"></button>
             <button type="button" id="danger" class="bg-danger w-50 h-100 opacidade-0" disabled
-                onclick="jogarCor(this);"></button>
+                onclick="jogarCor(this);" style="border-radius: 0 50% 0 0;"></button>
         </div>
-        <div class="row h-50">
+        <div class="row h-50 bg-dark">
             <button type="button" id="warning" class="bg-warning w-50 h-100 opacidade-0" disabled
-                onclick="jogarCor(this);"></button>
+                onclick="jogarCor(this);" style="border-radius: 0 0 0 50%;"></button>
             <button type="button" id="success" class="bg-success w-50 h-100 opacidade-0" disabled
-                onclick="jogarCor(this);"></button>
+                onclick="jogarCor(this);" style="border-radius: 0 0 50% 0;"></button>
         </div>
         <button id="msg" class="position-absolute btn btn-dark text-white p-3" style="position: absolute; margin: auto auto auto auto; top: 0;
-       height: 100px; width: 150px; top: 0; left: 0; right: 0; bottom: 0;" onclick="iniciarJogo();">Começar!</button>
+       height: 150px; width: 150px; top: 0; left: 0; right: 0; bottom: 0; border-radius: 50%;" onclick="iniciarJogo();">Começar!</button>
     </main>
     <script src="js/jogo.js"></script>
 </body>

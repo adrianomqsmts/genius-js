@@ -83,7 +83,7 @@ function fimRodada() {
     var valor = rodadaFixa - 1;
     ordem[rodadaFixa] = escolherCor();
     var btn = document.getElementById("msg");
-    btn.innerHTML = "Jogar rordada " + valor;
+    btn.innerHTML = "Jogar Rodada " + valor;
     btn.disabled = false;
 
 }
