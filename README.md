@@ -4,7 +4,7 @@ Projeto pessoal de estudos, onde desenvolvo um jogo de memorização de cores in
 
 ### 💻 Interface 
 
-Abaixo temos a tela do jogo desenvolvida com em HTML5, CSS3 e Bootstrap. 
+Abaixo temos a tela do jogo. 
 
 ![](imagens/jogo.png)
 
